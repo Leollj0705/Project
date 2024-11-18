@@ -1,0 +1,82 @@
+{
+  "admin2@test.com_customizedWeightListLocal": [
+    {
+      "ew": "0.4",
+      "sw": "0.1",
+      "gw": "0.5"
+    },
+    {
+      "ew": "0.8",
+      "sw": "0.1",
+      "gw": "0.1"
+    },
+    {
+      "ew": "0.2",
+      "sw": "0.4",
+      "gw": "0.4"
+    }
+  ],
+  "admin@test.com_customizedWeightListLocal": [
+    {
+      "ew": "0.3",
+      "sw": "0.2",
+      "gw": "0.5"
+    },
+    {
+      "ew": "0.1",
+      "sw": "0.7",
+      "gw": "0.2"
+    },
+    {
+      "ew": "0.4",
+      "sw": "0.25",
+      "gw": "0.35"
+    },
+    {
+      "ew": "0.9",
+      "sw": "0.1",
+      "gw": "0"
+    },
+    {
+      "ew": "0.5",
+      "sw": "0.3",
+      "gw": "0.2"
+    },
+    {
+      "ew": "0.2",
+      "sw": "0.7",
+      "gw": "0.1"
+    },
+    {
+      "ew": "0.5",
+      "sw": "0.5",
+      "gw": "0"
+    }
+  ],
+  "admin4@test.com_customizedWeightListLocal": [
+    {
+      "ew": "0.2",
+      "sw": "0.7",
+      "gw": "0.1"
+    }
+  ],
+  "admin3@test.com_customizedWeightListLocal": [
+    {
+      "ew": "0.12",
+      "sw": "0.18",
+      "gw": "0.7"
+    },
+    {
+      "ew": "0.2",
+      "sw": "0.2",
+      "gw": "0.6"
+    }
+  ],
+  "default": [
+    {
+      "ew": "",
+      "sw": "",
+      "gw": ""
+    }
+  ]
+}

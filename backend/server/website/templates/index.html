@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <script>
+    // 登录函数
+    const login = async (email, password) => {
+      try {
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('password', password);
+
+        const response = await fetch('http://localhost:5000/api/login', { //这里要注意nodejs调试环境下的跨域问题,要做代理
+          method: 'POST',
+          body: formData,
+        });
+
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error('登录出错:', error);
+      }
+    };
+
+    // 示例调用
+    login('admin@test.com', '123456');*/
+  </script>
+</body>
+
+</html>
