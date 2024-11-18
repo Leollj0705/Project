@@ -25,18 +25,18 @@ def query_data():
         page = request.args.get('page', 1, type=int)
         limit = request.args.get('limit', 10, type=int)
 
-        # 获取其他任意参数
+        # Get any other parameter
         other_params = {k: v for k, v in request.args.items() if k not in ['page', 'limit', 'field_name', 'query_str']}
 
     elif request.method == 'POST':
         page = request.form.get('page', 1, type=int)
         limit = request.form.get('limit', 10, type=int)
 
-        # 获取其他任意参数
+        # Get any other parameter
         other_params = {k: v for k, v in request.form.items() if k not in ['page', 'limit', 'field_name', 'query_str']}
 
     try:
-        # 先获取一条数据来判断字段类型
+        # Get a piece of data first to determine the field type
         sample_data = mongodb.ecom_collection.find_one()
         if not sample_data:
             raise Exception("No data available for type detection")
@@ -70,13 +70,13 @@ def query_data():
                 else:
                     query[param_key] = param_value
 
-        # 计算总数量
+        # Calculate the total number
         total_items = mongodb.ecom_collection.count_documents(query)
 
-        # 计算总页数
+        # Calculate the total number of pages
         total_pages = math.ceil(total_items / limit)
 
-        # 执行分页查询
+        # Execute a paging query
         skip = (page - 1) * limit
         data = list(mongodb.ecom_collection.find(query).skip(skip).limit(limit))
 
@@ -100,18 +100,18 @@ def query_data_2():
         page = request.args.get('page', 1, type=int)
         limit = request.args.get('limit', 10, type=int)
 
-        # 获取其他任意参数
+        # Get any other parameter
         other_params = {k: v for k, v in request.args.items() if k not in ['page', 'limit', 'field_name', 'query_str']}
 
     elif request.method == 'POST':
         page = request.form.get('page', 1, type=int)
         limit = request.form.get('limit', 10, type=int)
 
-        # 获取其他任意参数
+        # Get any other parameter
         other_params = {k: v for k, v in request.form.items() if k not in ['page', 'limit', 'field_name', 'query_str']}
 
     try:
-        # 先获取一条数据来判断字段类型
+        # Get a piece of data first to determine the field type
         sample_data = mongodb.ecom_collection.find_one()
         if not sample_data:
             raise Exception("No data available for type detection")
@@ -145,16 +145,16 @@ def query_data_2():
                 else:
                     query[param_key] = param_value
 
-        # 计算总数量
+        # Calculate the total number
         pipeline = [{"$match": query}, {"$group": {"_id": "$perm_id", "data": {"$first": "$$ROOT"}}}]
         distinct_data = list(mongodb.ecom_collection.aggregate(pipeline))
 
         total_items = len(distinct_data)
 
-        # 计算总页数
+        # Calculate the total number of pages
         total_pages = math.ceil(total_items / limit)
 
-        # 执行分页查询
+        # Execute a paging query
         skip = (page - 1) * limit
         data = distinct_data[skip:skip + limit]
 

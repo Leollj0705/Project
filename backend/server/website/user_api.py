@@ -40,7 +40,7 @@ def login():
     elif request.method == 'POST':
         email = request.form.get('email', '', type=str)
         password = request.form.get('password', '', type=str)
-        # data = request.get_json()  # 从前端的 JSON 获取数据
+        # data = request.get_json()  # Get data from front-end JSON
         # email = data.get('email')
         # password = data.get('password')
     print("hahhaha",email)

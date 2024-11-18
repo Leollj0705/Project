@@ -1,6 +1,6 @@
 # from pymongo import MongoClient
 
-# # 如果MongoDB安装在本地则改成localhost,否则改成MongoDB所在的电脑或服务器的IP地址
+# If MongoDB is installed locally, change it to localhost, otherwise change it to the IP address of the computer or server where MongoDB is located.
 # mongodb_host = 'mongodb://localhost:27017/'
 
 # # mongodb_host = 'mongodb://192.168.1.9:27017/'
@@ -18,11 +18,11 @@
 from pymongo import MongoClient
 import os
 
-# 如果MongoDB安装在本地则改成localhost,否则改成MongoDB所在的电脑或服务器的IP地址
+# If MongoDB is installed locally, change it to localhost, otherwise change it to the IP address of the computer or server where MongoDB is located.
 mongodb_host = os.getenv("MONGO_URI", "mongodb://root:root@localhost:27017/")
 print(mongodb_host)
 
-# json文件加了方括号[]
+# The json file is enclosed in square brackets [].
 
 # mongodb_host = 'mongodb://192.168.1.9:27017/'
 database_name = 'ecom'

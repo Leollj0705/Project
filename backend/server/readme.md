@@ -11,12 +11,12 @@
 
 On this healthcare service website, users can perform the following operations:
 
-- **member**£º
+- **member**ï¿½ï¿½
     - Can evaluate the doctor's rating.
     - Can change the doctor's rating.
-- **doctor**£º
+- **doctor**ï¿½ï¿½
     - None
-- **admin**£º
+- **admin**ï¿½ï¿½
     - Has all the functions of a doctor.
     - Can manage user accounts, including deleting users, changing user roles and statuses.
     - Can perform more comprehensive management and supervision of the entire website.

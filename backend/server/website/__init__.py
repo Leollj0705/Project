@@ -64,12 +64,12 @@ def catch_all(path):
     return send_from_directory(app.static_folder, 'index.html')
 
 
-# 这里做firestorage图片代理转发
-# 避免保存页面到PDF时，图片没有的问题，也就是图片的跨域问题。
+# Here do firestorage image proxy forwarding
+# Avoid the problem of saving a page to PDF when the image is not available, that is, the cross-domain problem of the image.
 @app.route('/firestorage_proxy/<path:base64str>')
 def firestorage_proxy(base64str):
     firestorage_path = base64.b64decode(base64str)
 
     response = requests.get(firestorage_path)
-    response_headers = {'Content-Type': 'image/jpeg'}  # 替换为实际图片类型
+    response_headers = {'Content-Type': 'image/jpeg'}  # Replace with actual image type
     return make_response(response.content, 200, response_headers)
